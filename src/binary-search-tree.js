@@ -282,21 +282,18 @@ class BinarySearchTree {
    * @return {BinarySearchTreeNode}
    */
   _min(current = this._root) {
-    console.log('min');
-    console.log(current);
     if (current === null) {
       return null;
     }
 
     if (current.hasLeft()) {
-      console.log(291);
       return this._min(current.getLeft());
     }
 
     return current;
   }
 
-  min(){
+  min() {
     return this._min() ? this._min().data : null;
   }
 
@@ -539,21 +536,6 @@ class BinarySearchTree {
     this._count = 0;
   }
 }
-
-const tree = new BinarySearchTree();
-tree.add(9);
-tree.add(14);
-tree.add(54);
-tree.add(2);
-tree.add(6);
-tree.add(8);
-tree.add(31);
-tree.add(1);
-tree.remove(6);
-tree.remove(2);
-
-console.log('---')
-console.log(tree.min());
 
 module.exports = {
   BinarySearchTree,
